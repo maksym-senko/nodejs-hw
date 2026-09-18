@@ -12,6 +12,9 @@ export const saveFileToCloudinary = (buffer, userId) => {
       {
         folder: 'avatars',
         public_id: `user_${userId}_${Date.now()}`,
+        resource_type: 'image',
+        overwrite: true,
+        unique_filename: true,
       },
       (error, result) => {
         if (error) return reject(error);
